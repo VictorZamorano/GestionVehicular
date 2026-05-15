@@ -1,4 +1,5 @@
 using GestionVehicular.Data;
+using GestionVehicular.Forms;
 using MySql.Data.MySqlClient;
 
 
@@ -25,6 +26,13 @@ namespace GestionVehicular
             {
                 MessageBox.Show("Error al conectar: " + ex.Message);
             }
+        }
+
+        private void listadoDeContribuyenteYVehículoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmList ventana = new FrmList();
+            ventana.ShowDialog();
+
         }
     }
 }

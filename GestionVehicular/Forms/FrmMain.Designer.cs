@@ -109,6 +109,7 @@
             listadoDeContribuyenteYVehículoToolStripMenuItem.Name = "listadoDeContribuyenteYVehículoToolStripMenuItem";
             listadoDeContribuyenteYVehículoToolStripMenuItem.Size = new Size(207, 20);
             listadoDeContribuyenteYVehículoToolStripMenuItem.Text = "Listado de contribuyente y vehículo";
+            listadoDeContribuyenteYVehículoToolStripMenuItem.Click += listadoDeContribuyenteYVehículoToolStripMenuItem_Click;
             // 
             // FrmMain
             // 
