@@ -53,7 +53,7 @@ namespace GestionVehicular
 
         private void modificarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            new FrmModificarVehiculo().ShowDialog(); 
+            new FrmModificarVehiculo().ShowDialog();
         }
 
         private void modificarContribuyenteToolStripMenuItem_Click(object sender, EventArgs e)
