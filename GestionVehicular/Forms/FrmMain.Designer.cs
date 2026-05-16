@@ -97,6 +97,7 @@
             modificarContribuyenteToolStripMenuItem.Name = "modificarContribuyenteToolStripMenuItem";
             modificarContribuyenteToolStripMenuItem.Size = new Size(202, 22);
             modificarContribuyenteToolStripMenuItem.Text = "Modificar contribuyente";
+            modificarContribuyenteToolStripMenuItem.Click += modificarContribuyenteToolStripMenuItem_Click;
             // 
             // modificarVehículoToolStripMenuItem
             // 
