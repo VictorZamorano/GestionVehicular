@@ -20,7 +20,7 @@ namespace GestionVehicular.Data
             }
         };
 
-        // Clase para formatear el RUT chileno
+        // Metodo para formatear el RUT chileno
         public static class RutFormateador
         {
             public static string FormatearRut(string rut)
@@ -45,6 +45,16 @@ namespace GestionVehicular.Data
                 // Si no es numérico (por error de tipeo), devolvemos el original limpio
                 return actual;
             }
+        }
+
+        // Metodo para convertir todas las letras a mayúsculas
+        public static class Mayusculizador
+        {
+            public static string Mayusculas(string texto)
+            {
+                return texto?.ToUpper() ?? string.Empty;
+            }
+
         }
     }
 }

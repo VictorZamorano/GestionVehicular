@@ -78,12 +78,12 @@ namespace GestionVehicular.Data
                             {
                                 contribuyente = new Contribuyente
                                 {
-                                    Rut = reader["rut"].ToString(),
-                                    Nombre = reader["nombre"].ToString(),
-                                    Apellido = reader["apellido"].ToString(),
-                                    Nacionalidad = reader["nacionalidad"].ToString(),
-                                    Direccion = reader["direccion"].ToString(),
-                                    Comuna = reader["comuna"].ToString()
+                                    Rut = reader.GetString("rut"),
+                                    Nombre = reader.GetString("nombre"),
+                                    Apellido = reader.GetString("apellido"),
+                                    Nacionalidad = reader.GetString("nacionalidad"),
+                                    Direccion = reader.GetString("direccion"),
+                                    Comuna = reader.GetString("comuna")
                                 };
                             }
                         }
@@ -100,6 +100,45 @@ namespace GestionVehicular.Data
             }
             // Devuelve el contribuyente encontrado
             return contribuyente;
+        }
+
+        // Método para agregar un nuevo contribuyente
+        public bool AgregarContribuyente(Contribuyente contribuyente)
+        {
+            string query = @"INSERT INTO Contribuyente (rut, nombre, apellido, nacionalidad, direccion, comuna) 
+                             VALUES (@rut, @nombre, @apellido, @nacionalidad, @direccion, @comuna);";
+
+            try
+            {
+                using (MySqlConnection conn = _connectionHelper.ObtenerConexion())
+                {
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        // Mapeamos las propiedades del objeto a los parámetros de la consulta
+                        cmd.Parameters.AddWithValue("@rut", contribuyente.Rut);
+                        cmd.Parameters.AddWithValue("@nombre", contribuyente.Nombre);
+                        cmd.Parameters.AddWithValue("@apellido", contribuyente.Apellido);
+                        cmd.Parameters.AddWithValue("@nacionalidad", contribuyente.Nacionalidad);
+                        cmd.Parameters.AddWithValue("@direccion", contribuyente.Direccion);
+                        cmd.Parameters.AddWithValue("@comuna", contribuyente.Comuna);
+
+                        conn.Open();
+
+                        // ExecuteNonQuery devuelve la cantidad de filas afectadas. 
+                        // Si es mayor a 0, significa que se insertó correctamente.
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+
+                        return filasAfectadas > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Opcional: puedes lanzar la excepción o manejarla aquí. 
+                // Para que el formulario no se caiga bruscamente, retornamos false.
+                Console.WriteLine("Error al insertar contribuyente: " + ex.Message);
+                return false;
+            }
         }
 
         // Metodo para modificar un contribuyente
