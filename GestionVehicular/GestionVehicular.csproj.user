@@ -13,11 +13,5 @@
     <Compile Update="Forms\FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\FrmModificarContribuyente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\FrmModificarVehiculo.cs">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
 </Project>

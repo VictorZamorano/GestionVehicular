@@ -55,5 +55,11 @@ namespace GestionVehicular
         {
             new FrmModificarVehiculo().ShowDialog();
         }
+
+        private void modificarContribuyenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmModifContribuyente ventana = new FrmModifContribuyente();
+            ventana.ShowDialog();
+        }
     }
 }
