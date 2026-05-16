@@ -147,6 +147,7 @@
             // 
             // listadoPorContribuyentesToolStripMenuItem
             // 
+            this.modificarContribuyenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             modificarContribuyenteToolStripMenuItem.Name = "modificarContribuyenteToolStripMenuItem";
             modificarContribuyenteToolStripMenuItem.Size = new Size(202, 22);
             modificarContribuyenteToolStripMenuItem.Text = "Modificar contribuyente";
@@ -197,5 +198,7 @@
         private ToolStripMenuItem listadoPorContribuyentesToolStripMenuItem;
         private ToolStripMenuItem listadoPorVehiculosToolStripMenuItem;
         private ToolStripMenuItem salirToolStripMenuItem;
+        private ToolStripMenuItem modificarContribuyenteToolStripMenuItem;
+
     }
 }

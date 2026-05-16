@@ -38,29 +38,36 @@ namespace GestionVehicular.Forms
 
         private void btnGuardarCambios_Click(object sender, EventArgs e)
         {
-            if (!ValidarCampos())
-                return;
-
-            var c = new Contribuyente
+            string rut = txtRut.Text.Trim();
+            if (string.IsNullOrEmpty(rut))
             {
-                Rut = txtRut.Text,
-                Nombre = txtNombre.Text,
-                Apellido = txtApellido.Text,
-                Nacionalidad = txtNacionalidad.Text,
-                Direccion = txtDireccion.Text,
-                Comuna = txtComuna.Text
+                MessageBox.Show("Por favor, ingrese el RUT del contribuyente.");
+                return;
+            }
+
+            Contribuyente contribuyente = new Contribuyente
+            {
+                Rut = rut,
+                Nombre = txtNombre.Text.Trim(),
+                Apellido = txtApellido.Text.Trim(),
+                Nacionalidad = txtNacionalidad.Text.Trim(),
+                Direccion = txtDireccion.Text.Trim(),
+                Comuna = txtComuna.Text.Trim()
             };
 
-            if (data.Modificar(c))
-            {
-                MessageBox.Show("Datos modificados correctamente.");
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Error al modificar los datos.");
-            }
+            ContribuyenteData contribuyenteData = new ContribuyenteData();
+            contribuyenteData.Modificar(contribuyente);
+
+            MessageBox.Show("Contribuyente modificado exitosamente.");
+
+            txtRut.Clear();
+            txtNombre.Clear();
+            txtApellido.Clear();
+            txtNacionalidad.Clear();
+            txtDireccion.Clear();
+            txtComuna.Clear();
         }
+
 
 
         private bool ValidarCampos()

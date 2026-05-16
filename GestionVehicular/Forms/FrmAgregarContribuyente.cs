@@ -19,31 +19,36 @@ namespace GestionVehicular.Forms
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (!ValidarCampos())
-                return;
-
-            var c = new Contribuyente
+            string rut = txtRut.Text.Trim();
+            if (string.IsNullOrEmpty(rut))
             {
-                Rut = txtRut.Text,
-                Nombre = txtNombre.Text,
-                Apellido = txtApellido.Text,
-                Nacionalidad = txtNacionalidad.Text,
-                Direccion = txtDireccion.Text,
-                Comuna = txtComuna.Text
+                MessageBox.Show("Por favor, ingrese el RUT del contribuyente.");
+                return;
+            }
+
+            Contribuyente contribuyente = new Contribuyente
+            {
+                Rut = rut,
+                Nombre = txtNombre.Text.Trim(),
+                Apellido = txtApellido.Text.Trim(),
+                Nacionalidad = txtNacionalidad.Text.Trim(),
+                Direccion = txtDireccion.Text.Trim(),
+                Comuna = txtComuna.Text.Trim()
             };
 
-            var data = new ContribuyenteData();
+            ContribuyenteData contribuyenteData = new ContribuyenteData();
+            contribuyenteData.Agregar(contribuyente);
 
-            if (data.Agregar(c))
-            {
-                MessageBox.Show("Contribuyente agregado correctamente");
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Error al agregar contribuyente");
-            }
+            MessageBox.Show("Contribuyente agregado exitosamente.");
+
+            txtRut.Clear();
+            txtNombre.Clear();
+            txtApellido.Clear();
+            txtNacionalidad.Clear();
+            txtDireccion.Clear();
+            txtComuna.Clear();
         }
+
 
 
         private bool ValidarCampos()
