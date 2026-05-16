@@ -5,15 +5,16 @@ using MySql.Data.MySqlClient;
 
 namespace GestionVehicular.Data
 {
-    // Singleton para manejar la conexión a la base de datos
     public class ConnectionHelper
     {
-        // Cadena de conexión a la base de datos MySQL - MODIFICAR CON TUS DATOS
-        private readonly string connectionString = "Server=127.0.0.1;Database=gestionpermisos;Uid=root;Password=;";
+        private readonly string connectionString =
+            "Server=127.0.0.1;Port=3306;Database=gestionpermisos;Uid=root;Pwd=;";
 
         public MySqlConnection ObtenerConexion()
         {
-            return new MySqlConnection(connectionString);
+            var conn = new MySqlConnection(connectionString);
+            conn.Open();
+            return conn;
         }
     }
 }

@@ -16,11 +16,12 @@ namespace GestionVehicular
 
         private void TestConnection_Click(object sender, EventArgs e)
         {
-            using MySqlConnection conn = connecHelper.ObtenerConexion();
             try
             {
-                conn.Open();
-                MessageBox.Show("Conexión exitosa a la base de datos.");
+                using (var conn = new ConnectionHelper().ObtenerConexion())
+                {
+                    MessageBox.Show("Conexión exitosa");
+                }
             }
             catch (Exception ex)
             {
@@ -33,6 +34,26 @@ namespace GestionVehicular
             FrmList ventana = new FrmList();
             ventana.ShowDialog();
 
+        }
+
+        private void agregarContribuyentesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmAgregarContribuyente().ShowDialog();
+        }
+
+        private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new FrmAgregarVehiculo().ShowDialog();
+        }
+
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmModificarContribuyente().ShowDialog();
+        }
+
+        private void modificarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new FrmModificarVehiculo().ShowDialog();
         }
     }
 }
