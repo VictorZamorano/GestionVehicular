@@ -45,9 +45,10 @@
             // 
             // testConnection
             // 
-            testConnection.Location = new Point(12, 84);
+            testConnection.Location = new Point(14, 112);
+            testConnection.Margin = new Padding(3, 4, 3, 4);
             testConnection.Name = "testConnection";
-            testConnection.Size = new Size(178, 63);
+            testConnection.Size = new Size(203, 84);
             testConnection.TabIndex = 2;
             testConnection.Text = "Probar Conexión a la DB";
             testConnection.UseVisualStyleBackColor = true;
@@ -55,10 +56,12 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { agregarContribuyenteToolStripMenuItem, consultarPorContribuyenteYVehículosToolStripMenuItem, modificarDatosDeUnContribuyenteYDeVehículosToolStripMenuItem, listadoDeContribuyenteYVehículoToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(971, 24);
+            menuStrip1.Padding = new Padding(7, 3, 0, 3);
+            menuStrip1.Size = new Size(1290, 30);
             menuStrip1.TabIndex = 3;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -66,20 +69,20 @@
             // 
             agregarContribuyenteToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { agregarContribuyenteToolStripMenuItem1, agregarVehículoToolStripMenuItem });
             agregarContribuyenteToolStripMenuItem.Name = "agregarContribuyenteToolStripMenuItem";
-            agregarContribuyenteToolStripMenuItem.Size = new Size(195, 20);
+            agregarContribuyenteToolStripMenuItem.Size = new Size(242, 24);
             agregarContribuyenteToolStripMenuItem.Text = "Agregar contribuyente y vehículo";
             // 
             // agregarContribuyenteToolStripMenuItem1
             // 
             agregarContribuyenteToolStripMenuItem1.Name = "agregarContribuyenteToolStripMenuItem1";
-            agregarContribuyenteToolStripMenuItem1.Size = new Size(193, 22);
+            agregarContribuyenteToolStripMenuItem1.Size = new Size(241, 26);
             agregarContribuyenteToolStripMenuItem1.Text = "Agregar contribuyente";
             agregarContribuyenteToolStripMenuItem1.Click += agregarContribuyenteToolStripMenuItem1_Click;
             // 
             // agregarVehículoToolStripMenuItem
             // 
             agregarVehículoToolStripMenuItem.Name = "agregarVehículoToolStripMenuItem";
-            agregarVehículoToolStripMenuItem.Size = new Size(193, 22);
+            agregarVehículoToolStripMenuItem.Size = new Size(241, 26);
             agregarVehículoToolStripMenuItem.Text = "Agregar vehículo";
             agregarVehículoToolStripMenuItem.Click += agregarVehículoToolStripMenuItem_Click;
             // 
@@ -87,20 +90,20 @@
             // 
             consultarPorContribuyenteYVehículosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { consultarPorContribuyenteToolStripMenuItem, consultarPorVehículoToolStripMenuItem });
             consultarPorContribuyenteYVehículosToolStripMenuItem.Name = "consultarPorContribuyenteYVehículosToolStripMenuItem";
-            consultarPorContribuyenteYVehículosToolStripMenuItem.Size = new Size(233, 20);
+            consultarPorContribuyenteYVehículosToolStripMenuItem.Size = new Size(287, 24);
             consultarPorContribuyenteYVehículosToolStripMenuItem.Text = " Consultar por contribuyente y vehículos";
             // 
             // consultarPorContribuyenteToolStripMenuItem
             // 
             consultarPorContribuyenteToolStripMenuItem.Name = "consultarPorContribuyenteToolStripMenuItem";
-            consultarPorContribuyenteToolStripMenuItem.Size = new Size(223, 22);
+            consultarPorContribuyenteToolStripMenuItem.Size = new Size(276, 26);
             consultarPorContribuyenteToolStripMenuItem.Text = "Consultar por contribuyente";
             consultarPorContribuyenteToolStripMenuItem.Click += consultarPorContribuyenteToolStripMenuItem_Click;
             // 
             // consultarPorVehículoToolStripMenuItem
             // 
             consultarPorVehículoToolStripMenuItem.Name = "consultarPorVehículoToolStripMenuItem";
-            consultarPorVehículoToolStripMenuItem.Size = new Size(223, 22);
+            consultarPorVehículoToolStripMenuItem.Size = new Size(276, 26);
             consultarPorVehículoToolStripMenuItem.Text = "Consultar por vehículo";
             consultarPorVehículoToolStripMenuItem.Click += consultarPorVehículoToolStripMenuItem_Click;
             // 
@@ -108,37 +111,38 @@
             // 
             modificarDatosDeUnContribuyenteYDeVehículosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { modificarContribuyenteToolStripMenuItem, modificarVehículoToolStripMenuItem });
             modificarDatosDeUnContribuyenteYDeVehículosToolStripMenuItem.Name = "modificarDatosDeUnContribuyenteYDeVehículosToolStripMenuItem";
-            modificarDatosDeUnContribuyenteYDeVehículosToolStripMenuItem.Size = new Size(293, 20);
+            modificarDatosDeUnContribuyenteYDeVehículosToolStripMenuItem.Size = new Size(365, 24);
             modificarDatosDeUnContribuyenteYDeVehículosToolStripMenuItem.Text = " Modificar datos de un contribuyente y de vehículos";
             // 
             // modificarContribuyenteToolStripMenuItem
             // 
             modificarContribuyenteToolStripMenuItem.Name = "modificarContribuyenteToolStripMenuItem";
-            modificarContribuyenteToolStripMenuItem.Size = new Size(202, 22);
+            modificarContribuyenteToolStripMenuItem.Size = new Size(251, 26);
             modificarContribuyenteToolStripMenuItem.Text = "Modificar contribuyente";
             modificarContribuyenteToolStripMenuItem.Click += modificarContribuyenteToolStripMenuItem_Click;
             // 
             // modificarVehículoToolStripMenuItem
             // 
             modificarVehículoToolStripMenuItem.Name = "modificarVehículoToolStripMenuItem";
-            modificarVehículoToolStripMenuItem.Size = new Size(202, 22);
+            modificarVehículoToolStripMenuItem.Size = new Size(251, 26);
             modificarVehículoToolStripMenuItem.Text = "Modificar vehículo";
             modificarVehículoToolStripMenuItem.Click += modificarVehículoToolStripMenuItem_Click;
             // 
             // listadoDeContribuyenteYVehículoToolStripMenuItem
             // 
             listadoDeContribuyenteYVehículoToolStripMenuItem.Name = "listadoDeContribuyenteYVehículoToolStripMenuItem";
-            listadoDeContribuyenteYVehículoToolStripMenuItem.Size = new Size(207, 20);
+            listadoDeContribuyenteYVehículoToolStripMenuItem.Size = new Size(257, 24);
             listadoDeContribuyenteYVehículoToolStripMenuItem.Text = "Listado de contribuyente y vehículo";
             listadoDeContribuyenteYVehículoToolStripMenuItem.Click += listadoDeContribuyenteYVehículoToolStripMenuItem_Click;
             // 
             // FrmMain
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(971, 437);
+            ClientSize = new Size(1290, 583);
             Controls.Add(testConnection);
             Controls.Add(menuStrip1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FrmMain";
             Text = "Formulario Principal";
             menuStrip1.ResumeLayout(false);
