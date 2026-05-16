@@ -147,9 +147,9 @@
             // 
             // listadoPorContribuyentesToolStripMenuItem
             // 
-            listadoPorContribuyentesToolStripMenuItem.Name = "listadoPorContribuyentesToolStripMenuItem";
-            listadoPorContribuyentesToolStripMenuItem.Size = new Size(270, 26);
-            listadoPorContribuyentesToolStripMenuItem.Text = "Listado por Contribuyentes";
+            modificarContribuyenteToolStripMenuItem.Name = "modificarContribuyenteToolStripMenuItem";
+            modificarContribuyenteToolStripMenuItem.Size = new Size(202, 22);
+            modificarContribuyenteToolStripMenuItem.Text = "Modificar contribuyente";
             // 
             // listadoPorVehiculosToolStripMenuItem
             // 
