@@ -44,6 +44,20 @@ namespace GestionVehicular
             ventana.ShowDialog();
         }
 
+        // Evento para consultar por contribuyente
+        private void consultarPorContribuyenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultarContribuyente ventana = new FrmConsultarContribuyente();
+            ventana.ShowDialog();
+        }
+
+        // Evento para consultar por vehículo
+        private void consultarPorVehículoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultarVehiculo ventana = new FrmConsultarVehiculo(); 
+            ventana.ShowDialog();
+        }
+
         // Evento para modificar contribuyente
         private void modificarContribuyenteToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -7,6 +7,12 @@
     <Compile Update="Forms\FrmAgregarVehiculo.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\FrmConsultarContribuyente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FrmConsultarVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\FrmList.cs">
       <SubType>Form</SubType>
     </Compile>

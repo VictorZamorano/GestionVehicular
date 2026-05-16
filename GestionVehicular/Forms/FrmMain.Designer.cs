@@ -95,12 +95,14 @@
             consultarPorContribuyenteToolStripMenuItem.Name = "consultarPorContribuyenteToolStripMenuItem";
             consultarPorContribuyenteToolStripMenuItem.Size = new Size(223, 22);
             consultarPorContribuyenteToolStripMenuItem.Text = "Consultar por contribuyente";
+            consultarPorContribuyenteToolStripMenuItem.Click += consultarPorContribuyenteToolStripMenuItem_Click;
             // 
             // consultarPorVehículoToolStripMenuItem
             // 
             consultarPorVehículoToolStripMenuItem.Name = "consultarPorVehículoToolStripMenuItem";
             consultarPorVehículoToolStripMenuItem.Size = new Size(223, 22);
             consultarPorVehículoToolStripMenuItem.Text = "Consultar por vehículo";
+            consultarPorVehículoToolStripMenuItem.Click += consultarPorVehículoToolStripMenuItem_Click;
             // 
             // modificarDatosDeUnContribuyenteYDeVehículosToolStripMenuItem
             // 
