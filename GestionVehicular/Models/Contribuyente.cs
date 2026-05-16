@@ -14,4 +14,3 @@ namespace GestionVehicular.Models
         public string Comuna { get; set; }
     }
 }
-
