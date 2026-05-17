@@ -124,8 +124,13 @@
             // 
             txtRut.Location = new Point(297, 83);
             txtRut.Name = "txtRut";
+            txtRut.PlaceholderText = "11.222.333-4";
             txtRut.Size = new Size(210, 23);
             txtRut.TabIndex = 21;
+            txtRut.TextChanged += txtRut_TextChanged;
+            txtRut.Enter += txtRut_Enter;
+            txtRut.KeyPress += txtRut_KeyPress;
+            txtRut.Leave += txtRut_Leave;
             // 
             // txtNombre
             // 

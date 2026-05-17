@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using static GestionVehicular.Data.StringHelper;
 
 namespace GestionVehicular.Forms
 {
@@ -85,6 +86,46 @@ namespace GestionVehicular.Forms
             }
 
             return true;
+        }
+
+        private void txtRut_Leave(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtRut.Text))
+            {
+                // El formato (puntos y guion) solo se aplica al salir del campo
+                txtRut.Text = RutFormateador.FormatearRut(txtRut.Text);
+            }
+        }
+
+        // Evento para permitir solo números, guiones y la letra 'k' en el campo de texto del RUT
+        private void txtRut_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                e.KeyChar != 'k' && e.KeyChar != 'K')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtRut_Enter(object sender, EventArgs e)
+        {
+            txtRut.Text = txtRut.Text.Replace(".", "").Replace("-", "");
+        }
+
+        private void txtRut_TextChanged(object sender, EventArgs e)
+        {
+            // Limpiamos temporalmente para contar cuántos números reales hay
+            string soloNumeros = txtRut.Text.Replace(".", "").Replace("-", "");
+
+            // Si tiene menos de 8 o 9 caracteres (un RUT normal), se pone rojo
+            if (soloNumeros.Length < 8)
+            {
+                txtRut.ForeColor = Color.Red;
+            }
+            else
+            {
+                txtRut.ForeColor = SystemColors.WindowText; // Color negro normal
+            }
         }
     }
 }

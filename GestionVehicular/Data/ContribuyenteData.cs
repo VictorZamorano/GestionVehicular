@@ -60,9 +60,9 @@ namespace GestionVehicular.Data
         }
 
         // Método para buscar un contribuyente por su RUT
-        public Contribuyente BuscarContribuyentePorRut(string rut)
+        public Contribuyente? BuscarContribuyentePorRut(string rut)
         {
-            Contribuyente contribuyente = new Contribuyente();
+            Contribuyente? contribuyente = null;
             string query = "SELECT * FROM Contribuyente WHERE rut = @rut;";
             try
             {

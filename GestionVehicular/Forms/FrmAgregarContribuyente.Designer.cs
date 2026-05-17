@@ -99,8 +99,13 @@
             txtRut.Location = new Point(298, 92);
             txtRut.Margin = new Padding(3, 2, 3, 2);
             txtRut.Name = "txtRut";
+            txtRut.PlaceholderText = "11.222.333-4";
             txtRut.Size = new Size(194, 23);
             txtRut.TabIndex = 19;
+            txtRut.TextChanged += txtRut_TextChanged;
+            txtRut.Enter += txtRut_Enter;
+            txtRut.KeyPress += txtRut_KeyPress;
+            txtRut.Leave += txtRut_Leave;
             // 
             // lblComuna
             // 

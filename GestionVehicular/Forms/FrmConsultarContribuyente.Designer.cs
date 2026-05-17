@@ -98,6 +98,10 @@
             txtRut.PlaceholderText = "11.222.333-K";
             txtRut.Size = new Size(184, 23);
             txtRut.TabIndex = 16;
+            txtRut.TextChanged += txtRut_TextChanged;
+            txtRut.Enter += txtRut_Enter;
+            txtRut.KeyPress += txtRut_KeyPress;
+            txtRut.Leave += txtRut_Leave;
             // 
             // lblDireccion
             // 
