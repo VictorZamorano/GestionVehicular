@@ -40,15 +40,20 @@
             modificarContribuyenteToolStripMenuItem = new ToolStripMenuItem();
             modificarVehículoToolStripMenuItem = new ToolStripMenuItem();
             listadoDeContribuyenteYVehículoToolStripMenuItem = new ToolStripMenuItem();
+            salirToolStripMenuItem = new ToolStripMenuItem();
+            cerrarSesionToolStripMenuItem = new ToolStripMenuItem();
+            salirDeLaAppToolStripMenuItem = new ToolStripMenuItem();
+            lblUsuarioActual = new Label();
+            btnCrearUsuario = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // testConnection
             // 
-            testConnection.Location = new Point(14, 112);
+            testConnection.Location = new Point(14, 268);
             testConnection.Margin = new Padding(3, 4, 3, 4);
             testConnection.Name = "testConnection";
-            testConnection.Size = new Size(203, 84);
+            testConnection.Size = new Size(169, 56);
             testConnection.TabIndex = 2;
             testConnection.Text = "Probar Conexión a la DB";
             testConnection.UseVisualStyleBackColor = true;
@@ -57,11 +62,11 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { agregarContribuyenteToolStripMenuItem, consultarPorContribuyenteYVehículosToolStripMenuItem, modificarDatosDeUnContribuyenteYDeVehículosToolStripMenuItem, listadoDeContribuyenteYVehículoToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { agregarContribuyenteToolStripMenuItem, consultarPorContribuyenteYVehículosToolStripMenuItem, modificarDatosDeUnContribuyenteYDeVehículosToolStripMenuItem, listadoDeContribuyenteYVehículoToolStripMenuItem, salirToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 3, 0, 3);
-            menuStrip1.Size = new Size(1290, 30);
+            menuStrip1.Size = new Size(1354, 30);
             menuStrip1.TabIndex = 3;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -69,8 +74,8 @@
             // 
             agregarContribuyenteToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { agregarContribuyenteToolStripMenuItem1, agregarVehículoToolStripMenuItem });
             agregarContribuyenteToolStripMenuItem.Name = "agregarContribuyenteToolStripMenuItem";
-            agregarContribuyenteToolStripMenuItem.Size = new Size(242, 24);
-            agregarContribuyenteToolStripMenuItem.Text = "Agregar contribuyente y vehículo";
+            agregarContribuyenteToolStripMenuItem.Size = new Size(120, 24);
+            agregarContribuyenteToolStripMenuItem.Text = "Agregar Datos";
             // 
             // agregarContribuyenteToolStripMenuItem1
             // 
@@ -90,8 +95,8 @@
             // 
             consultarPorContribuyenteYVehículosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { consultarPorContribuyenteToolStripMenuItem, consultarPorVehículoToolStripMenuItem });
             consultarPorContribuyenteYVehículosToolStripMenuItem.Name = "consultarPorContribuyenteYVehículosToolStripMenuItem";
-            consultarPorContribuyenteYVehículosToolStripMenuItem.Size = new Size(287, 24);
-            consultarPorContribuyenteYVehículosToolStripMenuItem.Text = " Consultar por contribuyente y vehículos";
+            consultarPorContribuyenteYVehículosToolStripMenuItem.Size = new Size(90, 24);
+            consultarPorContribuyenteYVehículosToolStripMenuItem.Text = " Consultas";
             // 
             // consultarPorContribuyenteToolStripMenuItem
             // 
@@ -111,8 +116,8 @@
             // 
             modificarDatosDeUnContribuyenteYDeVehículosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { modificarContribuyenteToolStripMenuItem, modificarVehículoToolStripMenuItem });
             modificarDatosDeUnContribuyenteYDeVehículosToolStripMenuItem.Name = "modificarDatosDeUnContribuyenteYDeVehículosToolStripMenuItem";
-            modificarDatosDeUnContribuyenteYDeVehículosToolStripMenuItem.Size = new Size(365, 24);
-            modificarDatosDeUnContribuyenteYDeVehículosToolStripMenuItem.Text = " Modificar datos de un contribuyente y de vehículos";
+            modificarDatosDeUnContribuyenteYDeVehículosToolStripMenuItem.Size = new Size(134, 24);
+            modificarDatosDeUnContribuyenteYDeVehículosToolStripMenuItem.Text = " Modificar Datos";
             // 
             // modificarContribuyenteToolStripMenuItem
             // 
@@ -131,15 +136,56 @@
             // listadoDeContribuyenteYVehículoToolStripMenuItem
             // 
             listadoDeContribuyenteYVehículoToolStripMenuItem.Name = "listadoDeContribuyenteYVehículoToolStripMenuItem";
-            listadoDeContribuyenteYVehículoToolStripMenuItem.Size = new Size(257, 24);
-            listadoDeContribuyenteYVehículoToolStripMenuItem.Text = "Listado de contribuyente y vehículo";
+            listadoDeContribuyenteYVehículoToolStripMenuItem.Size = new Size(151, 24);
+            listadoDeContribuyenteYVehículoToolStripMenuItem.Text = "Listados Unificados";
             listadoDeContribuyenteYVehículoToolStripMenuItem.Click += listadoDeContribuyenteYVehículoToolStripMenuItem_Click;
+            // 
+            // salirToolStripMenuItem
+            // 
+            salirToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cerrarSesionToolStripMenuItem, salirDeLaAppToolStripMenuItem });
+            salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            salirToolStripMenuItem.Size = new Size(52, 24);
+            salirToolStripMenuItem.Text = "Salir";
+            // 
+            // cerrarSesionToolStripMenuItem
+            // 
+            cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
+            cerrarSesionToolStripMenuItem.Size = new Size(224, 26);
+            cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
+            cerrarSesionToolStripMenuItem.Click += cerrarSesionToolStripMenuItem_Click;
+            // 
+            // salirDeLaAppToolStripMenuItem
+            // 
+            salirDeLaAppToolStripMenuItem.Name = "salirDeLaAppToolStripMenuItem";
+            salirDeLaAppToolStripMenuItem.Size = new Size(224, 26);
+            salirDeLaAppToolStripMenuItem.Text = "Salir de la App";
+            salirDeLaAppToolStripMenuItem.Click += salirDeLaAppToolStripMenuItem_Click;
+            // 
+            // lblUsuarioActual
+            // 
+            lblUsuarioActual.AutoSize = true;
+            lblUsuarioActual.Location = new Point(14, 65);
+            lblUsuarioActual.Name = "lblUsuarioActual";
+            lblUsuarioActual.Size = new Size(0, 20);
+            lblUsuarioActual.TabIndex = 4;
+            // 
+            // btnCrearUsuario
+            // 
+            btnCrearUsuario.Location = new Point(14, 204);
+            btnCrearUsuario.Name = "btnCrearUsuario";
+            btnCrearUsuario.Size = new Size(169, 46);
+            btnCrearUsuario.TabIndex = 5;
+            btnCrearUsuario.Text = "Crear Nuevo Usuario";
+            btnCrearUsuario.UseVisualStyleBackColor = true;
+            btnCrearUsuario.Click += btnCrearUsuario_Click;
             // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1290, 583);
+            ClientSize = new Size(1354, 583);
+            Controls.Add(btnCrearUsuario);
+            Controls.Add(lblUsuarioActual);
             Controls.Add(testConnection);
             Controls.Add(menuStrip1);
             Margin = new Padding(3, 4, 3, 4);
@@ -165,5 +211,10 @@
         private ToolStripMenuItem listadoDeContribuyenteYVehículoToolStripMenuItem;
         private ToolStripMenuItem agregarContribuyenteToolStripMenuItem1;
         private ToolStripMenuItem agregarVehículoToolStripMenuItem;
+        private Label lblUsuarioActual;
+        private Button btnCrearUsuario;
+        private ToolStripMenuItem salirToolStripMenuItem;
+        private ToolStripMenuItem cerrarSesionToolStripMenuItem;
+        private ToolStripMenuItem salirDeLaAppToolStripMenuItem;
     }
 }

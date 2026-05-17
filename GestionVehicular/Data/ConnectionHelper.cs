@@ -9,9 +9,9 @@ namespace GestionVehicular.Data
     public class ConnectionHelper
     {
         // Cadena de conexión a la base de datos MySQL - MODIFICAR CON TUS DATOS
-        private readonly string connectionString = "Server=127.0.0.1;Database=gestionpermisos;Uid=root;Password=;";
+        private static string connectionString = "Server=127.0.0.1;Database=gestionpermisos;Uid=root;Password=;";
 
-        public MySqlConnection ObtenerConexion()
+        public static MySqlConnection ObtenerConexion()
         {
             return new MySqlConnection(connectionString);
         }

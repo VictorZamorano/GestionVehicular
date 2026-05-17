@@ -38,7 +38,7 @@ namespace GestionVehicular.Data
 
             try
             {
-                using (MySqlConnection conn = _connectionHelper.ObtenerConexion())
+                using (MySqlConnection conn = ConnectionHelper.ObtenerConexion())
                 {
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
@@ -66,7 +66,7 @@ namespace GestionVehicular.Data
             string query = "SELECT * FROM Contribuyente WHERE rut = @rut;";
             try
             {
-                using (MySqlConnection conn = _connectionHelper.ObtenerConexion())
+                using (MySqlConnection conn = ConnectionHelper.ObtenerConexion())
                 {
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
@@ -110,7 +110,7 @@ namespace GestionVehicular.Data
 
             try
             {
-                using (MySqlConnection conn = _connectionHelper.ObtenerConexion())
+                using (MySqlConnection conn = ConnectionHelper.ObtenerConexion())
                 {
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
@@ -150,7 +150,7 @@ namespace GestionVehicular.Data
                 WHERE rut = @rut;";
             try
             {
-                using (MySqlConnection conn = _connectionHelper.ObtenerConexion())
+                using (MySqlConnection conn = ConnectionHelper.ObtenerConexion())
                 {
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {

@@ -21,7 +21,7 @@ namespace GestionVehicular.Data
         {
             try
             {
-                using (var conn = _connectionHelper.ObtenerConexion())
+                using (var conn = ConnectionHelper.ObtenerConexion())
                 {
                     string sql = @"INSERT INTO vehiculo 
                                    (patente, marca, modelo, color, anio, rut_contribuyente)
@@ -57,7 +57,7 @@ namespace GestionVehicular.Data
 
             try
             {
-                using (var conn = _connectionHelper.ObtenerConexion())
+                using (var conn = ConnectionHelper.ObtenerConexion())
                 using (var cmd = new MySqlCommand(query, conn))
                 using (var adapter = new MySqlDataAdapter(cmd))
                 {
@@ -82,7 +82,7 @@ namespace GestionVehicular.Data
 
             try
             {
-                using (var conn = _connectionHelper.ObtenerConexion())
+                using (var conn = ConnectionHelper.ObtenerConexion())
                 using (var cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@rut", rut);
@@ -109,7 +109,7 @@ namespace GestionVehicular.Data
 
             try
             {
-                using (var conn = _connectionHelper.ObtenerConexion())
+                using (var conn = ConnectionHelper.ObtenerConexion())
                 using (var cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@patente", patente);
@@ -152,7 +152,7 @@ namespace GestionVehicular.Data
 
             try
             {
-                using (var conn = _connectionHelper.ObtenerConexion())
+                using (var conn = ConnectionHelper.ObtenerConexion())
                 using (var cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@patente", v.Patente);

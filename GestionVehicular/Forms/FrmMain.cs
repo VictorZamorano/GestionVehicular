@@ -1,5 +1,6 @@
 using GestionVehicular.Data;
 using GestionVehicular.Forms;
+using GestionVehicular.Models;
 using MySql.Data.MySqlClient;
 
 
@@ -18,7 +19,7 @@ namespace GestionVehicular
         // Evento para probar la conexión a la base de datos
         private void TestConnection_Click(object sender, EventArgs e)
         {
-            using MySqlConnection conn = connecHelper.ObtenerConexion();
+            using MySqlConnection conn = ConnectionHelper.ObtenerConexion();
             try
             {
                 conn.Open();
@@ -54,7 +55,7 @@ namespace GestionVehicular
         // Evento para consultar por vehículo
         private void consultarPorVehículoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmConsultarVehiculo ventana = new FrmConsultarVehiculo(); 
+            FrmConsultarVehiculo ventana = new FrmConsultarVehiculo();
             ventana.ShowDialog();
         }
 
@@ -78,6 +79,54 @@ namespace GestionVehicular
             FrmList ventana = new FrmList();
             ventana.ShowDialog();
 
+        }
+
+        private Usuario _usuario;
+
+        public FrmMain(Usuario usuario)
+        {
+            InitializeComponent();
+            _usuario = usuario;
+
+            lblUsuarioActual.Text = $"Bienvenido, {_usuario.Username}";
+        }
+
+        private void btnCrearUsuario_Click(object sender, EventArgs e)
+        {
+            FrmCrearUsuario frm = new FrmCrearUsuario();
+            frm.ShowDialog();
+        }
+
+        private void salirDeLaAppToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult r = MessageBox.Show(
+                "¿Desea cerrar la aplicación?",
+                "Salir",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (r == DialogResult.Yes)
+            {
+                MessageBox.Show("Cerrando aplicación...", "Salir", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Application.Exit();
+            }
+        }
+
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var r = MessageBox.Show(
+            "¿Desea cerrar sesión?",
+            "Cerrar sesión",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question);
+
+            if (r == DialogResult.Yes)
+            {
+                FrmLogin login = new FrmLogin();
+                login.Show();
+                this.Close();
+            }
         }
     }
 }
