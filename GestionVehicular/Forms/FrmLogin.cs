@@ -12,6 +12,10 @@ namespace GestionVehicular.Forms
     public partial class FrmLogin : Form
     {
         UsuarioData usuarioData = new UsuarioData();
+        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
 
         public FrmLogin()
         {
@@ -36,6 +40,22 @@ namespace GestionVehicular.Forms
             FrmMain main = new FrmMain(usuario);
             main.Show();
             this.Hide();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            DialogResult r = MessageBox.Show(
+        "¿Desea cerrar la aplicación?",
+        "Salir",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Warning
+    );
+
+            if (r == DialogResult.Yes)
+            {
+                MessageBox.Show("Cerrando aplicación...", "Salir", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Application.Exit();
+            }
         }
     }
 }

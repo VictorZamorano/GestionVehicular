@@ -14,6 +14,20 @@ namespace GestionVehicular.Data
             _connectionHelper = new ConnectionHelper();
         }
 
+        public bool ExisteContribuyente(string rut)
+        {
+            using (var conn = ConnectionHelper.ObtenerConexion())
+            {
+                conn.Open();
+                string sql = "SELECT COUNT(*) FROM contribuyente WHERE rut = @rut";
+
+                using (var cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@rut", rut);
+                    return Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+                }
+            }
+        }
         // ---------------------------------------------------------
         // 1) AGREGAR VEHÍCULO
         // ---------------------------------------------------------
@@ -21,6 +35,15 @@ namespace GestionVehicular.Data
         {
             try
             {
+
+                if (!ExisteContribuyente(v.RutContribuyente))
+                {
+                    MessageBox.Show("El RUT ingresado no existe en la base de datos.",
+                                    "RUT no encontrado",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                    return false;
+                }
                 using (var conn = ConnectionHelper.ObtenerConexion())
                 {
                     string sql = @"INSERT INTO vehiculo 
@@ -43,7 +66,12 @@ namespace GestionVehicular.Data
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al agregar vehículo: " + ex.Message);
+                MessageBox.Show("Error al agregar vehículo:\n" + ex.Message,
+                "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+
+                return false;
             }
         }
 
